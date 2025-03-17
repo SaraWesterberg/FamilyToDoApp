@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="FamilyToDoApp.FamilyMemberPage"
+             Title="FamilyMemberPage">
+
+    <VerticalStackLayout Padding="20" Spacing="10">
+        <Label Text="{Binding Name}"
+               FontSize="28"
+               HorizontalOptions="Center"/>
+
+        <Entry
+            x:Name="TaskEntry"
+            Placeholder="Lägg till Uppgift"
+            FontSize="18"/>
+        <Button
+            Text="Lägg till uppgift"
+            FontSize="18"
+            Clicked="OnAddTaskClicked"/>
+
+        <ListView x:Name="TaskListView"
+                  ItemsSource="{Binding Tasks}">
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <ViewCell>
+                        <StackLayout Orientation="Horizontal" Spacing="10">
+                            <CheckBox />
+                            <Label Text="{Binding}" VerticalOptions="Center" FontSize="20"/>
+                        </StackLayout>
+                    </ViewCell>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
+    </VerticalStackLayout>
+</ContentPage>

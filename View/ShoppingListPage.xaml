@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="FamilyToDoApp.ShoppingListPage"
+             Title="Handlingslista">
+
+    <VerticalStackLayout Padding="20" Spacing="10">
+        <Label 
+            Text="Handlingslista!"
+            FontSize="24"
+            HorizontalOptions="Center" />
+
+        <!--Entry för att lägga till nya varor-->
+        <Entry
+            x:Name="ItemEntry"
+            Placeholder="Lägg till vara"
+            FontSize="18"
+            Text="{Binding NewItem, Mode=TwoWay}"/>
+
+        <!--Knapp för att lägga till vara i listan-->
+        <Button
+            Text="Lägg till vara"
+            FontSize="18"
+            Clicked="OnAddItemClicked"/>
+
+        <!--Lista för att visa de varor som ska handlas-->
+        <ListView
+            x:Name="ShoppingListView"
+            ItemsSource="{Binding ShoppingItems}">
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <ViewCell>
+                        <StackLayout Orientation="Horizontal" Spacing="10">
+                            <CheckBox/>
+                            <Label
+                                Text="{Binding}" 
+                                VerticalOptions="Center"
+                                FontSize="20"/>
+                            <Button 
+                                Text="❌" 
+                                FontSize="18"
+                                Clicked="OnRemoveItemClicked"
+                                BindingContext="{Binding}"/>
+                        </StackLayout>
+                    </ViewCell>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
+    </VerticalStackLayout>
+</ContentPage>
