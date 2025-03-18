@@ -10,11 +10,13 @@ namespace FamilyToDoApp
 
         public MainPage()
         {
-            InitializeComponent();
+             InitializeComponent();
             _mainViewModel = new MainViewModel();
             BindingContext = _mainViewModel;
+            
         }
 
+       
         protected override void OnDisappearing()
         {
             base.OnDisappearing();
