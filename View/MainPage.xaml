@@ -7,7 +7,7 @@
 
         <!-- Klocka -->
         <Label Text="{Binding CurrentDateTime}" FontSize="24" HorizontalOptions="Start"/>
-        <Label Text="{Binding WeatherData.temp, StringFormat='Temp i Råby idag{0}C°'}" VerticalOptions="Center" HorizontalOptions="End"></Label>
+        <Label Text="{Binding WeatherData.temp, StringFormat='Temp i Råby idag {0}C°'}" VerticalOptions="Center" HorizontalOptions="End"></Label>
 
 
         <!-- Knapp som leder till packlistan för ryggsäcken -->

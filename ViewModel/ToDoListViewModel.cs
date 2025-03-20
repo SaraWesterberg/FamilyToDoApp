@@ -38,5 +38,10 @@ namespace FamilyToDoApp.ViewModel
                 NewTask = string.Empty;
             }
         }
+
+        public void RemoveTask(ToDoTask task)
+        {
+            Tasks.Remove(task); 
+        }
     }
 }

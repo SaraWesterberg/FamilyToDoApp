@@ -21,7 +21,7 @@ namespace FamilyToDoApp
             BindingContext = this; // Bind data till hela sidan
         }
 
-        // När knappen för att lägga till en uppgift trycks
+        // när knappen för att lägga till en uppgift trycks
         private void OnAddTaskClicked(object sender, EventArgs e)
         {
             if (!string.IsNullOrWhiteSpace(TaskEntry.Text))

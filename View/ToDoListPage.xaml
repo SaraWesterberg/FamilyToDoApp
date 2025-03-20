@@ -28,6 +28,12 @@
                             <Label Text="{Binding Description}"
                                    VerticalOptions="Center"
                                    FontSize="18"/>
+                            <Button 
+                                  Text="❌"
+                                  Clicked="OnRemoveTaskClicked"
+                                  HorizontalOptions="End"
+                                  VerticalOptions="Center"/>
+
                         </StackLayout>
                     </ViewCell>
                 </DataTemplate>

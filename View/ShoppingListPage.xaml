@@ -37,8 +37,7 @@
                                 VerticalOptions="Center"
                                 FontSize="20"/>
                             <Button 
-                                Text="❌" 
-                                FontSize="18"
+                                Text="❌"
                                 Clicked="OnRemoveItemClicked"
                                 BindingContext="{Binding}"/>
                         </StackLayout>

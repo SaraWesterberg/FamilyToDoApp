@@ -1,7 +1,7 @@
-﻿using FamilyToDoApp.ViewModel; 
+﻿using FamilyToDoApp.ViewModel;
 using Microsoft.Maui.Controls;
 
-namespace FamilyToDoApp 
+namespace FamilyToDoApp
 {
     public partial class ShoppingListPage : ContentPage
     {
@@ -9,8 +9,8 @@ namespace FamilyToDoApp
 
         public ShoppingListPage()
         {
-            InitializeComponent(); 
-            _viewModel = new ShoppingListViewModel();
+            InitializeComponent();
+            _viewModel = ShoppingListViewModel.Instance; 
             BindingContext = _viewModel;
         }
 
@@ -26,5 +26,5 @@ namespace FamilyToDoApp
                 _viewModel.RemoveItem(item);
             }
         }
-    } 
+    }
 }

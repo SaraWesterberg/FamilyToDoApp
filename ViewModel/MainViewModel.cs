@@ -12,10 +12,6 @@ namespace FamilyToDoApp.ViewModel
     class MainViewModel : INotifyPropertyChanged
     {
         public event PropertyChangedEventHandler PropertyChanged;
-
-       
-
-        // OnPropertyChanged-metoden som gör att UI kan uppdateras när en egenskap ändras
         protected virtual void OnPropertyChanged(string propertyName)
         {
             PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
@@ -35,7 +31,7 @@ namespace FamilyToDoApp.ViewModel
                 if (_currentDateTime != value)
                 {
                     _currentDateTime = value;
-                    OnPropertyChanged(nameof(CurrentDateTime));  // Här kallar vi också på OnPropertyChanged
+                    OnPropertyChanged(nameof(CurrentDateTime));  
                 }
             }
         }
@@ -59,6 +55,7 @@ namespace FamilyToDoApp.ViewModel
             _timer.Start();
 
             CurrentDateTime = DateTime.Now.ToString("dddd, HH:mm");
+
             LoadWeatherData();
         }
 

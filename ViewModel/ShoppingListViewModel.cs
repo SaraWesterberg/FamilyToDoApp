@@ -8,6 +8,25 @@ namespace FamilyToDoApp.ViewModel
     {
         public event PropertyChangedEventHandler PropertyChanged;
 
+        private static ShoppingListViewModel _instance;
+
+        public ShoppingListViewModel()
+        {
+            ShoppingItems = new ObservableCollection<string>();
+            LoadShoppingList();
+        }
+
+        public static ShoppingListViewModel Instance
+        {
+            get
+            {
+                if (_instance == null)
+                {
+                    _instance = new ShoppingListViewModel();
+                }
+                return _instance;
+            }
+        }
         public ObservableCollection<string> ShoppingItems { get; set; }
 
         private string _newItem;
@@ -21,14 +40,8 @@ namespace FamilyToDoApp.ViewModel
             }
         }
 
-        //Nyckel för lagring av listan
+      
         private const string ShoppingListKey = "ShoppingList";
-
-        public ShoppingListViewModel()
-        {
-            ShoppingItems = new ObservableCollection<string>();
-            LoadShoppingList();
-        }
 
         public void AddItem()
         {
