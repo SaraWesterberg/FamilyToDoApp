@@ -16,7 +16,7 @@ namespace FamilyToDoApp.Data
 
         static WeatherApi()
         {
-            Client.DefaultRequestHeaders.Add("X-Api-Key", "pELX1QbCxyUWhq+Ct3W8VQ==RNkKE2dJ8WBuoDQF");
+            Client.DefaultRequestHeaders.Add("X-Api-Key", "");
         }
 
         public static async Task<Model.WeatherData> GetWeatherAsync(string uri)
